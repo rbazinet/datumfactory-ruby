@@ -33,10 +33,32 @@ module DatumfactoryRuby
       @auth_token = result["auth_token"]
     end
 
-    def events
-      self.class.get("/api/v1/events", @options.merge({ headers: { "Authorization" => "Bearer #{@auth_token}" } }))
+    def get(id)
+      self.class.get("/api/v1/events/#{id}", @options.merge({ headers: { "Authorization" => "Bearer #{@auth_token}" } })).parsed_response
+    end  
+
+    def all
+      self.class.get("/api/v1/events", @options.merge({ headers: { "Authorization" => "Bearer #{@auth_token}" } })).parsed_response
     end
 
+    def destroy(id)
+      self.class.delete("/api/v1/events/#{id}", @options.merge({ headers: { "Authorization" => "Bearer #{@auth_token}" } }))
+    end  
+
+    def by_slug(id)
+      self.class.get("/api/v1/events/by-slug/#{id}", @options.merge({ headers: { "Authorization" => "Bearer #{@auth_token}" } })).parsed_response
+    end  
+
+    def create(data, title, description=nil, slug)
+      #{ "event": {"data": {"product_id": "23", "color": "red"}, "title": "New Product", "slug": "new_product"}}
+      body = {
+        { "event": {"data": {"#{data}"}, "title": "#{title}", "description": "#{description}", "slug": "#{slug}"}}
+      }
+
+      @options.merge(body)
+      self.class.post("/api/v1/events", @options.merge({ headers: { "Authorization" => "Bearer #{@auth_token}" } })).parsed_response
+
+    end  
   end
 end
 
