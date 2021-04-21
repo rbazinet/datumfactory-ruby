@@ -1,9 +1,0 @@
-Documentation:
-    Enabled: false
-Metrics/LineLength:
-    Max: 120    
-Style/StringLiterals:
-    EnforcedStyle: double_quotes
-    SupportedStyles:
-        - single_quotes
-        - double_quotes    

@@ -1,4 +1,4 @@
-$LOAD_PATH.unshift File.expand_path("../lib", __dir__)
+$LOAD_PATH.unshift File.expand_path("../lib/datumfactory", __dir__)
 
-require "datumfactory"
+require "datumfactory/version"
 require "minitest/autorun"
