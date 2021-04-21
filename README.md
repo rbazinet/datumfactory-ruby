@@ -1,15 +1,15 @@
-# DatumfactoryRuby
+# Datumfactory for Ruby
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/datumfactory_ruby`. To experiment with that code, run `bin/console` for an interactive prompt.
+Use this Ruby gem to access and use the [Datum Factory](https://datumfactory.com/) event tracking service. [Sign up](https://datumfactory.com/register) for an account before using this gem. 
 
-TODO: Delete this and the text above, and describe your gem
+**Note:** we are currently in beta.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'datumfactory_ruby'
+gem 'datumfactory'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install datumfactory_ruby
+    $ gem install datumfactory-ruby
 
 ## Usage
 
@@ -32,7 +32,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/datumfactory_ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/datumfactory_ruby/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/datumfactory-ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/datumfactory-ruby/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
@@ -41,4 +41,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the DatumfactoryRuby project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/datumfactory_ruby/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Datumfactory for Ruby project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/datumfactory-ruby/blob/master/CODE_OF_CONDUCT.md).

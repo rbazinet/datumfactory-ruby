@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    datumfactory_ruby (0.1.0)
+    datumfactory (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -20,10 +20,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  datumfactory_ruby!
+  datumfactory!
   httparty (~> 0.18.0)
   minitest (~> 5.0)
   rake (~> 12.0)
 
 BUNDLED WITH
-   2.1.4
+   2.2.15

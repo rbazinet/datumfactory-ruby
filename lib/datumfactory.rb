@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-require "datumfactory_ruby/version"
+require "datumfactory/version"
 require "httparty"
 require "json"
 
-module DatumfactoryRuby
+module Datumfactory
   class Events
     include HTTParty
 
     attr_reader :auth_token
 
     format :json
-    base_uri "http://lvh.me:3000"
+    base_uri "localtest.me:3000"
 
     def initialize(site, email, password)
-      self.class.base_uri "http://#{site}.lvh.me:3000"
+      self.class.base_uri "localtest.me:3000"
       @site = site
       @email = email
       @password = password
@@ -27,10 +27,10 @@ module DatumfactoryRuby
 
     def login
       result = self.class.post("/api/login", @options.merge(
-        query: {
-          "email": @email,
-          "password": @password
-        }))
+                                               query: {
+                                                 "email": @email,
+                                                 "password": @password
+                                               }))
       @auth_token = result["auth_token"]
     end
 
@@ -58,7 +58,7 @@ module DatumfactoryRuby
             title: title,
             description: description,
             slug: slug
-          }  
+          }
         }
       }
 

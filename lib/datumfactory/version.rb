@@ -1,3 +1,3 @@
-module DatumfactoryRuby
+module Datumfactory
   VERSION = "0.1.0"
 end
