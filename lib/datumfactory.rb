@@ -13,7 +13,32 @@ module Datumfactory
     attr_reader :auth_token
 
     format :json
-    base_uri "datumfactory.com"
+    base_uri 'datumfactory.com'
+
+    def self.capture_event(container, auth_token, data, title, slug, description = nil)
+      body = {
+        query: {
+          event: {
+            data: data,
+            title: title,
+            description: description,
+            slug: slug
+          }
+        }
+      }
+
+      options = {
+        headers: {
+          'Content-Type' => 'application/json',
+          'X-API-Key' => auth_token.to_s
+        }
+      }
+
+      #options.merge!({ headers: { 'X-API-Key' => auth_token.to_s } })
+      options.merge!(body)
+      base_uri "https://#{container}.datumfactory.com"
+      post('/api/v1/events', options).parsed_response
+    end
 
     def initialize(site, email, password)
       self.class.base_uri "#{site}.datumfactory.com"
