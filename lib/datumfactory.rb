@@ -15,7 +15,7 @@ module Datumfactory
     format :json
     base_uri 'datumfactory.com'
 
-    def self.capture_event(container, auth_token, data, title, slug, description = nil)
+    def self.capture_event(site, auth_token, data, title, slug, description = nil)
       body = {
         query: {
           event: {
@@ -34,9 +34,8 @@ module Datumfactory
         }
       }
 
-      #options.merge!({ headers: { 'X-API-Key' => auth_token.to_s } })
       options.merge!(body)
-      base_uri "https://#{container}.datumfactory.com"
+      base_uri "https://#{site}.datumfactory.com"
       post('/api/v1/events', options).parsed_response
     end
 
